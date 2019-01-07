@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  minishift:
+    build: ./
+    image: halosan/minishift:latest
+    volumes:
+      - minishift-aws-home:/root
+      - ./:/opt
+    command: tail -f /dev/null
+    container_name: minishift
+volumes:
+  minishift-aws-home:
+    external: true
+
